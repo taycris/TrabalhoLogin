@@ -10,26 +10,23 @@ $password = md5($_POST['password']);
 if (isset($_POST['login_button'])) {
     //echo "ENTROU LOGIN " . $email. " - ".$password;
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $select = "SELECT * FROM usuarios";// WHERE email = '{$email}'";
-        $res = $conn->query($select);
-        //$query = mysqli_query($conn, $select);
-        //$row = mysqli_fetch_assoc($query);
-        echo "Senha digitada " .$password;
-        echo "SENHA BANCO".  $res ->senha;
-/*
+        $select = "SELECT * FROM usuarios WHERE email = '{$email}'";
+        
+        $query = mysqli_query($conn, $select);
+        $row = mysqli_fetch_assoc($query);
+        //echo "Senha digitada " .$password;
+        //echo "<br>SENHA BANCO".  $row["senha"];
+
         if (!$row) {
             echo "<script>alert('E-mail não cadastrado!!'); window.location='../../index.php';</script>";
         } else {
-        if ($password == $row->senha) {
-            // $select = "SELECT * FROM usuarios WHERE senha = '$password'";
-            // $query = mysqli_query($conn, $select);
-            // $row = mysqli_fetch_assoc($query);
-            echo 'senha correta';
+        if ($password == $row["senha"]) {
+            echo "<script> window.location='../../sucesso.php';</script>";;
          } else {
-                echo "<script>alert('Senha incorreta, tente novamente!!'".$row->senha."); window.location='../../cadastro.php';</script>";
+                echo "<script>alert('Senha incorreta, tente novamente!!'); window.location='../../index.php';</script>";
          }
         }
-    */
+    
     }else {
          echo "<script>alert('E-mail incorreto!!'); window.location='../../cadastro.php';</script>";
     }
