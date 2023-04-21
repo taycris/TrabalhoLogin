@@ -323,3 +323,8 @@ background-color: var(--color-dark-100);
       
   
 }
+a:-webkit-any-link {
+  color: black;
+  cursor: pointer;
+  text-decoration:none;
+}
