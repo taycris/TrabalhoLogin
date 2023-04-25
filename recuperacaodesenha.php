@@ -24,7 +24,7 @@
         <div id="inputs">
           <div calss="input_box">
             <label for="recuperacao"> 
-              Informe seu  E-mail ou Telefone para recuperar a senha:
+              Informe seu  E-mail para recuperar a senha:
               <div class="input-field">
                 <i class="fa-solid fa-key fa-rotate-270"></i>
                 <input typ="text" id="recuperacao" name="recuperacao">
